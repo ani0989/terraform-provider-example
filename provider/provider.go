@@ -8,19 +8,19 @@ import (
 
 func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
-		Schema: map[String]*schema.Schema{
+		Schema: map[string]*schema.Schema{
 			"username": {
-				Type:     schema.TypString,
+				Type:     schema.TypeString,
 				Required: false,
 			},
 			"password": {
-				Type:     schema.TypString,
+				Type:     schema.TypeString,
 				Required: false,
 			},
 		},
-		ResourcesMap: map[string]*schema.Resource{
-			"example_item": resourceItem(),
-		},
+		// ResourcesMap: map[string]*schema.Resource{
+		// 	"example_item": resourceItem(),
+		// },
 		ConfigureFunc: providerConfigure,
 	}
 }
