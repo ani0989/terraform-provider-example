@@ -10,12 +10,14 @@ func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"username": {
-				Type:     schema.TypeString,
-				Required: false,
+				Type:        schema.TypeString,
+				Required:    false,
+				DefaultFunc: schema.EnvDefaultFunc("USERNAME", ""),
 			},
 			"password": {
-				Type:     schema.TypeString,
-				Required: false,
+				Type:        schema.TypeString,
+				Required:    false,
+				DefaultFunc: schema.EnvDefaultFunc("PASSWORD", ""),
 			},
 		},
 		// ResourcesMap: map[string]*schema.Resource{
