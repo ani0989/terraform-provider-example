@@ -3,6 +3,6 @@ provider "example" {
     password = "password"
 }
 
-resource "example_item" "test"{
+resource "example_item" "test" {
     name = "Test"
 }

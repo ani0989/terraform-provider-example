@@ -46,7 +46,7 @@ func (s *Client) PostReq(todo *Todo) error {
 }
 
 // GetReq ... Makes the get req
-func (s *Client) GetReq() error {
+func (s *Client) GetReq() ([]byte, error) {
 	fmt.Println(baseURL)
 	fmt.Println("Get Request")
 
@@ -57,7 +57,7 @@ func (s *Client) GetReq() error {
 	data, _ := ioutil.ReadAll(res.Body)
 	res.Body.Close()
 	fmt.Printf("%s", data)
-	return err
+	return data, err
 }
 
 func (s *Client) doRequest(req *http.Request) ([]byte, error) {

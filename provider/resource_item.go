@@ -54,8 +54,8 @@ func resourceCreateItem(d *schema.ResourceData, m interface{}) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("Get Req")
-	fmt.Println(apiClient.GetReq())
+	// fmt.Println("Get Req")
+	// fmt.Println(apiClient.GetReq())
 	return nil
 }
 
@@ -70,8 +70,8 @@ func resourceDeleteItem(d *schema.ResourceData, m interface{}) error {
 	// if err != nil {
 	// 	return err
 	// }
-	fmt.Println("Delete Req")
-	fmt.Println(apiClient.GetReq())
+	// fmt.Println("Delete Req")
+	// fmt.Println(apiClient.GetReq())
 	return nil
 }
 
@@ -86,8 +86,8 @@ func resourceUpdateItem(d *schema.ResourceData, m interface{}) error {
 	// if err != nil {
 	// 	return err
 	// }
-	fmt.Println("Update Req")
-	fmt.Println(apiClient.GetReq())
+	// fmt.Println("Update Req")
+	// fmt.Println(apiClient.GetReq())
 	return nil
 }
 
@@ -102,7 +102,7 @@ func resourceReadItem(d *schema.ResourceData, m interface{}) error {
 	// if err != nil {
 	// 	return err
 	// }
-	fmt.Println("Read Req")
-	fmt.Println(apiClient.GetReq())
+	item := apiClient.GetReq()
+	d.Set("name", item)
 	return nil
 }
