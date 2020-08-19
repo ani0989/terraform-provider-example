@@ -20,10 +20,10 @@ func resourceItem() *schema.Resource {
 				ValidateFunc: validateName,
 			},
 		},
-		Read:   resourceCreateItem,
+		Read:   resourceReadItem,
 		Create: resourceCreateItem,
-		Update: resourceCreateItem,
-		Delete: resourceCreateItem,
+		Update: resourceUpdateItem,
+		Delete: resourceDeleteItem,
 	}
 }
 
@@ -64,13 +64,13 @@ func resourceDeleteItem(d *schema.ResourceData, m interface{}) error {
 	fmt.Println("Schema : ")
 	fmt.Println(d)
 
-	todo := client.Todo{ID: 1}
+	// todo := client.Todo{ID: 1}
 
-	err := apiClient.PostReq(&todo)
-	if err != nil {
-		return err
-	}
-	fmt.Println("Get Req")
+	// err := apiClient.PostReq(&todo)
+	// if err != nil {
+	// 	return err
+	// }
+	fmt.Println("Delete Req")
 	fmt.Println(apiClient.GetReq())
 	return nil
 }
@@ -80,13 +80,13 @@ func resourceUpdateItem(d *schema.ResourceData, m interface{}) error {
 	fmt.Println("Schema : ")
 	fmt.Println(d)
 
-	todo := client.Todo{ID: 1}
+	// todo := client.Todo{ID: 1}
 
-	err := apiClient.PostReq(&todo)
-	if err != nil {
-		return err
-	}
-	fmt.Println("Get Req")
+	// err := apiClient.PostReq(&todo)
+	// if err != nil {
+	// 	return err
+	// }
+	fmt.Println("Update Req")
 	fmt.Println(apiClient.GetReq())
 	return nil
 }
@@ -96,13 +96,13 @@ func resourceReadItem(d *schema.ResourceData, m interface{}) error {
 	fmt.Println("Schema : ")
 	fmt.Println(d)
 
-	todo := client.Todo{ID: 1}
+	// todo := client.Todo{ID: 1}
 
-	err := apiClient.PostReq(&todo)
-	if err != nil {
-		return err
-	}
-	fmt.Println("Get Req")
+	// err := apiClient.PostReq(&todo)
+	// if err != nil {
+	// 	return err
+	// }
+	fmt.Println("Read Req")
 	fmt.Println(apiClient.GetReq())
 	return nil
 }
