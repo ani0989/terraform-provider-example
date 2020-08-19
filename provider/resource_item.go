@@ -20,7 +20,7 @@ func resourceItem() *schema.Resource {
 				ValidateFunc: validateName,
 			},
 		},
-		Create: resourceCreateItem,
+		Read: resourceCreateItem,
 	}
 }
 
