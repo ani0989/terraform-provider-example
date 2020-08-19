@@ -6,6 +6,7 @@ import (
 	"github.com/hashicorp/terraform/terraform"
 )
 
+// Provider is the provider
 func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
@@ -20,9 +21,9 @@ func Provider() terraform.ResourceProvider {
 				DefaultFunc: schema.EnvDefaultFunc("PASSWORD", ""),
 			},
 		},
-		// ResourcesMap: map[string]*schema.Resource{
-		// 	"example_item": resourceItem(),
-		// },
+		ResourcesMap: map[string]*schema.Resource{
+			"example_item": resourceItem(),
+		},
 		ConfigureFunc: providerConfigure,
 	}
 }
