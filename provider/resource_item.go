@@ -20,7 +20,10 @@ func resourceItem() *schema.Resource {
 				ValidateFunc: validateName,
 			},
 		},
-		Read: resourceCreateItem,
+		Read:   resourceCreateItem,
+		Create: resourceCreateItem,
+		Update: resourceCreateItem,
+		Delete: resourceCreateItem,
 	}
 }
 

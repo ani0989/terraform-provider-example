@@ -17,7 +17,7 @@ func Provider() terraform.ResourceProvider {
 			},
 			"password": {
 				Type:        schema.TypeString,
-				Required:    false,
+				Required:    true,
 				DefaultFunc: schema.EnvDefaultFunc("PASSWORD", ""),
 			},
 		},
