@@ -16,7 +16,7 @@ func resourceItem() *schema.Resource {
 				Type:         schema.TypeString,
 				Required:     true,
 				Description:  "The name of the resource",
-				ForceNew:     true,
+				ForceNew:     false,
 				ValidateFunc: validateName,
 			},
 		},
